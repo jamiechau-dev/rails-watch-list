@@ -13,6 +13,7 @@
         <%# if user_signed_in? %>
           <li class="nav-item active">
             <%= link_to "Add a Movie", new_list_bookmark_path(@list), :class => "btn btn-primary" %>
+            <%= link_to 'Remove List', list_path(@list), data: { turbo_method: :delete, turbo_confirm: 'You sure...? 🧐' },:class => "btn btn-primary" %>
 
           </li>
       </ul>
