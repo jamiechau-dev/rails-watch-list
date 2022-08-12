@@ -101,8 +101,10 @@ li {
   padding: 16px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+  text-align: center;
   position: relative;
+  padding: 5px;
 }
 
 .card-trip-infos .card-trip-user {
