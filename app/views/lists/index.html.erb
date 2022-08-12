@@ -1,5 +1,21 @@
-<h1>Index</h1>
+<h1>Save any kind of Movie</h1>
+<h3>Classic</h3>
+<hr>
+
+
+
+<h2>My Lists</h2>
 
 <% @lists.each do |list| %>
-<%= list.name %>
+<li><%= link_to list['name'], list_path(list['id'])  %></li>
 <% end %>
+
+<%= bookmark.each do |mark| %>
+<li><%= mark.comment %></li>
+
+
+
+ <%# CREATE A LIST BUTTON %>
+<%# <a href="/lists/new" class="btn btn-primary">Create a movie list</a> %>
+
+<%= link_to "Create a List", new_list_path, :class => "btn btn-primary" %>

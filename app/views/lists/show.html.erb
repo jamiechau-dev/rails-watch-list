@@ -1,1 +1,8 @@
-<h1>show</h1>
+<h1><%= @list.name %></h1>
+
+
+
+
+
+<%# CREATE A MOVIE BUTTON  %>
+<%= link_to "Add a Movie", new_list_bookmark_path(@list), :class => "btn btn-primary" %>
