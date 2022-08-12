@@ -1,15 +1,43 @@
-<h1>Save any kind of Movie</h1>
-<h3>Classic</h3>
-<hr>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky">
+  <div class="container-fluid">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "https://play-lh.googleusercontent.com/zfzRXIWPB5T1AZzv2JkicNnPkcRe0hr6ppFqFtDOAIFwPngUcdg05IVKjpPR30gx7CmC" %>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <%# if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "Create a List", new_list_path, class: "nav-link btn btn-primary" %>
+
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
 
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://cdn.wallpapersafari.com/19/73/LVySch.jpg);">
+  <div class="container">
+    <h1>Welcome to all my favorite movies.</h1>
+    <p>Find the best movies in each category.</p>
+  </div>
+</div>
 
+
+<div>
 <h2>My Lists</h2>
+</div>
 
+<div class="flex">
 <% @lists.each do |list| %>
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://picsum.photos/200/300)">
 <li><%= link_to list['name'], list_path(list['id'])  %></li>
+</div>
+
 <% end %>
-
-
-
-<%= link_to "Create a List", new_list_path, :class => "btn btn-primary" %>
+</div>

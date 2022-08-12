@@ -1,12 +1,40 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon sticky">
+  <div class="container-fluid">
+    <%= link_to root_path, class: "navbar-brand" do %>
+      <%= image_tag "https://play-lh.googleusercontent.com/zfzRXIWPB5T1AZzv2JkicNnPkcRe0hr6ppFqFtDOAIFwPngUcdg05IVKjpPR30gx7CmC" %>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <%# if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "Add a Movie", new_list_bookmark_path(@list), :class => "btn btn-primary" %>
+
+          </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
 <h1><%= @list.name %></h1>
 
 
+<div>
+<% @list.movies.each do |movie| %>
+  <img class="avatar-movie" src="<%= movie.poster_url %>" alt="" >
+  <li><h3>Movie Name: <%= movie.title %></h3></li>
+  <li><h3>Overview: <%= movie.overview %></h3></li>
+  <li></li>
+<% end %>
+</div>
 
 
 
 
-
-
-
-<%# CREATE A MOVIE BUTTON  %>
-<%= link_to "Add a Movie", new_list_bookmark_path(@list), :class => "btn btn-primary" %>
+<% @list.bookmarks.each do |bookmark| %>
+  <li><%=  bookmark.comment  %></li>
+<% end %>
